@@ -16,7 +16,7 @@ document.getElementById('generarResultadosIngresos').addEventListener('click', (
         return acc + Number(ingresoExtra.monto);
     }, 0);
 
-    totalI = totalO + totalE;
+    let totalI = totalO + totalE;
 
     let resultado = document.getElementById("resultadoIngreso");
     resultado.textContent = totalI;
@@ -35,7 +35,7 @@ document.getElementById('generarResultadosEgresos').addEventListener('click', ()
         return acc + Number(egreso.monto);
     }, 0);
 
-    totalEg = totalO + totalE;
+    let totalEg = totalO + totalE;
 
     let resultado = document.getElementById("resultadoEgreso");
     resultado.textContent = totalEg;
