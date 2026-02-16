@@ -8,15 +8,15 @@ let resultado = 0
 document.getElementById('generarResultadosIngresos').addEventListener('click', () => {
 
     const datosGuardados = JSON.parse(localStorage.getItem("registrosIngreso")) || {}; //valido para que no sea null o vacia
-    const totalO = Object.values(datosGuardados).reduce((acc, ingreso) => {
+    const totalOrdiIng = Object.values(datosGuardados).reduce((acc, ingreso) => {
         return acc + Number(ingreso.monto);
     }, 0);
     const datosGuardadosE = JSON.parse(localStorage.getItem("registroIngExtra")) || {};
-    const totalE = Object.values(datosGuardadosE).reduce((acc, ingresoExtra) => {
+    const totalExtIng = Object.values(datosGuardadosE).reduce((acc, ingresoExtra) => {
         return acc + Number(ingresoExtra.monto);
     }, 0);
 
-    let totalI = totalO + totalE;
+    let totalI = totalOrdiIng + totalExtIng;
 
     let resultado = document.getElementById("resultadoIngreso");
     resultado.textContent = totalI;
@@ -27,15 +27,15 @@ document.getElementById('generarResultadosIngresos').addEventListener('click', (
 
 document.getElementById('generarResultadosEgresos').addEventListener('click', () => {
     const datosGuardados = JSON.parse(localStorage.getItem("registroEgreso")) || {};
-    const totalO = Object.values(datosGuardados).reduce((acc, egreso) => {
+    const totalOrdEgre = Object.values(datosGuardados).reduce((acc, egreso) => {
         return acc + Number(egreso.monto);
     }, 0);
     const datosGuardadosE = JSON.parse(localStorage.getItem("registroEgreExtra")) || {};
-    const totalE = Object.values(datosGuardados).reduce((acc, egreso) => {
-        return acc + Number(egreso.monto);
+    const totalExtEgre = Object.values(datosGuardadosE).reduce((acc, egresoExtr) => {
+        return acc + Number(egresoExtr.monto);
     }, 0);
 
-    let totalEg = totalO + totalE;
+    let totalEg = totalOrdEgre + totalExtEgre;
 
     let resultado = document.getElementById("resultadoEgreso");
     resultado.textContent = totalEg;
