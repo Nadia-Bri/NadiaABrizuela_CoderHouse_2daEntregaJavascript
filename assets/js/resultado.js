@@ -64,7 +64,7 @@ function renderIngresosEgresos(registros) {
         li.innerHTML = `
             <strong>${registro.tipoDeRegistro}</strong> |
             ${registro.fecha} |
-            $${registro.monto} |
+            $ ${registro.monto} |
             ${registro.detalle}
         `;
         li.classList.add("item-registro");
